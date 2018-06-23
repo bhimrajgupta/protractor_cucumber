@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 //protractor.conf.js
 const crew = require('serenity-js/lib/stage_crew');
 
@@ -36,12 +35,9 @@ exports.config = {
         // format: 'pretty',
         profile: false,
         'no-source': true
-    }
-=======
-//protractor.conf.js
-const crew = require('serenity-js/lib/stage_crew');
+    },
 
-exports.config = {
+exports:config = {
     // seleniumAddress: 'http://127.0.0.1:4444/wd/hub',
     getPageTimeout: 60000,
     allScriptsTimeout: 500000,
@@ -76,5 +72,4 @@ exports.config = {
         profile: false,
         'no-source': true
     }
->>>>>>> d19b6f6320c9f83c39bb2564671ce1bd06f9aba6
-};
+}}
