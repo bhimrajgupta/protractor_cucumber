@@ -1,7 +1,7 @@
 {
-  "name": "protractor_cucumber_javascript_framework",
+  "name": "protractor_javascript_cucumber_framework",
   "version": "1.0.0",
-  "description": "protractor_cucumber_javascript_framework",
+  "description": "protractor_javascript_cucumber_framework",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
