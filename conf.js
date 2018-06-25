@@ -1,5 +1,5 @@
 //protractor.conf.js
-const crew = require('serenity-js/lib/stage_crew');
+const crew = require('serenity-js/lib/stage_crew');
 
 exports.config = {
     // seleniumAddress: 'http://127.0.0.1:4444/wd/hub',
@@ -7,20 +7,20 @@ exports.config = {
     allScriptsTimeout: 500000,
     framework: 'custom',
     // path relative to the current config file
-   frameworkPath: require.resolve('protractor-cucumber-framework'),
-   //  frameworkPath: require.resolve('serenity-js'),
+    frameworkPath: require.resolve('protractor-cucumber-framework'),
+    //  frameworkPath: require.resolve('serenity-js'),
     serenity: {
-        crew:    [
+        crew: [
             crew.serenityBDDReporter(),
             crew.photographer()
         ],
         outputDirectory: `${process.cwd()}/target/site/serenity/`,
-        dialect: 'cucumber',  // or 'mocha'
+        dialect: 'cucumber',  // or 'mocha'
     },
     capabilities: {
         'browserName': 'chrome'
     },
-    directConnect:true,
+    directConnect: true,
 
     // Spec patterns are relative to this directory.
     specs: [
@@ -37,39 +37,40 @@ exports.config = {
         'no-source': true
     },
 
-exports:config = {
-    // seleniumAddress: 'http://127.0.0.1:4444/wd/hub',
-    getPageTimeout: 60000,
-    allScriptsTimeout: 500000,
-    framework: 'custom',
-    // path relative to the current config file
-   frameworkPath: require.resolve('protractor-cucumber-framework'),
-   //  frameworkPath: require.resolve('serenity-js'),
-    serenity: {
-        crew:    [
-            crew.serenityBDDReporter(),
-            crew.photographer()
+    exports: config = {
+        // seleniumAddress: 'http://127.0.0.1:4444/wd/hub',
+        getPageTimeout: 60000,
+        allScriptsTimeout: 500000,
+        framework: 'custom',
+        // path relative to the current config file
+        frameworkPath: require.resolve('protractor-cucumber-framework'),
+        //  frameworkPath: require.resolve('serenity-js'),
+        serenity: {
+            crew: [
+                crew.serenityBDDReporter(),
+                crew.photographer()
+            ],
+            outputDirectory: `${process.cwd()}/target/site/serenity/`,
+            dialect: 'cucumber',  // or 'mocha'
+        },
+        capabilities: {
+            'browserName': 'chrome'
+        },
+        directConnect: true,
+
+        // Spec patterns are relative to this directory.
+        specs: [
+            'features/feature_files/test.feature'
         ],
-        outputDirectory: `${process.cwd()}/target/site/serenity/`,
-        dialect: 'cucumber',  // or 'mocha'
-    },
-    capabilities: {
-        'browserName': 'chrome'
-    },
-    directConnect:true,
 
-    // Spec patterns are relative to this directory.
-    specs: [
-        'features/feature_files/test.feature'
-    ],
+        baseURL: 'http://localhost:8080/',
 
-    baseURL: 'http://localhost:8080/',
-
-    cucumberOpts: {
-        require: 'features/step_definitions/my_step_definitions.js',
-        tags: false,
-        // format: 'pretty',
-        profile: false,
-        'no-source': true
+        cucumberOpts: {
+            require: 'features/step_definitions/my_step_definitions.js',
+            tags: false,
+            // format: 'pretty',
+            profile: false,
+            'no-source': true
+        }
     }
-}}
+}
