@@ -80,6 +80,14 @@ exports.config = {
         cucumberOpts: {
             require: 'features/step_definitions/my_step_definitions.js',
             tags: false,
+            /*
+        * Individual tag execution:
+        * Option1: run protractor conf.js --cucumberOpts.tags="scenario1" --cucumberOpts.tags="scenario2"
+        * Option2: cucumberOpts:{tags: '@scenario2,}                    Individual tag
+        *          cucumberOpts:{tags: ('@scenario2, @scenario1')}      Logical AND
+        *          cucumberOpts:{tags: ('@scenario2', '@scenario1')}    Logical OR
+        * */
+
             // format: 'pretty',
             profile: false,
             'no-source': true
