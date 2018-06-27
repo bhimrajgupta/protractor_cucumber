@@ -20,6 +20,17 @@ exports.config = {
     capabilities: {
         'browserName': 'chrome'
     },
+    /*"For Multi browser support with Protractor
+        directConnect: true"
+        Update Mozilla firefox version > 60.0
+     */
+    /*
+    multiCapabilities: [
+        {'browserName': 'chrome'},
+        {'browserName': 'firefox'}
+    ],
+    */
+
     directConnect: true,
 
     // Spec patterns are relative to this directory.
@@ -32,6 +43,7 @@ exports.config = {
     cucumberOpts: {
         require: 'features/step_definitions/my_step_definitions.js',
         tags: false,
+
         // format: 'pretty',
         profile: false,
         'no-source': true
